@@ -38,6 +38,21 @@ Note: Make sure to set the Xsig option to 2 (propagates all data, even if the sa
 - Change the divider to 257, allowing full range (0-255 -> 0-65535)
 - Add an default brightness per light (otherwise default to 50%)
 
+# Fans
+Platform for fans.
+```yaml
+fan:
+  - platform: crestron
+    name: "Living Room Ceiling Fan"
+    speed_join: 101
+    speed_steps: 3  # Optional: for stepped fans
+    reverse_join: 201  # Optional: digital join for direction control
+```
+ - _name_: The entity id will be derived from this string (lower-cased with _ for spaces).  The friendly name will be set to this string.
+ - _speed_join_: The analog join that represents the fans's speed.
+ - _speed_steps_: Optional: Number of discrete speeds. Omit for stepless fans (0–65535). For example, a 3-speed fan would use 3, mapping to 0, 32768, and 65535 (shown as options for 0%, 50%, 100% in Home Assistant).
+ - _reverse_join_: Optional: If you have a reversible fan, this is the digital join that represents which direction the fan should go. 0 is forward and 1 is backwards.
+
 # How to run more than one instance
 I run 2 copies, one for my main program and the other one for my lighting program (D3). Here's how I do it:
 1. Make a copy of the folder (name it something else, I used crestron_d3)
