@@ -39,7 +39,7 @@ Note: Make sure to set the Xsig option to 2 (propagates all data, even if the sa
 - Add an default brightness per light (otherwise default to 50%)
 
 # Fans
-Platform for fans.
+ - Platform for fans.
 ```yaml
 fan:
   - platform: crestron
